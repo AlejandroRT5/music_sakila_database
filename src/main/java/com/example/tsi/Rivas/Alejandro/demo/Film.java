@@ -19,7 +19,7 @@ public class Film {
     private String rating;
     private String special_features;
 
-    public Film(String title, String description,int release_year,int rental_duration,double rental_rate,int length,double replacement_cost,String rating, String special_features){
+    /*public Film(String title, String description,int release_year,int rental_duration,double rental_rate,int length,double replacement_cost,String rating, String special_features){
         this.title=title;
         this.description=description;
         this.release_year=release_year;
@@ -30,7 +30,7 @@ public class Film {
         this.rating=rating;
         this.special_features=special_features;
 
-    }
+    } */
 
     public Film(){
     }
