@@ -1,5 +1,6 @@
-package com.example.tsi.Rivas.Alejandro.demo;
+package com.example.tsi.Rivas.Alejandro.demoTest;
 
+import com.example.tsi.Rivas.Alejandro.demo.Film;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
