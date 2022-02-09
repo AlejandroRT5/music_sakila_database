@@ -19,21 +19,8 @@ public class Film {
     private String rating;
     private String special_features;
 
-    /*public Film(String title, String description,int release_year,int rental_duration,double rental_rate,int length,double replacement_cost,String rating, String special_features){
-        this.title=title;
-        this.description=description;
-        this.release_year=release_year;
-        this.rental_duration=rental_duration;
-        this.rental_rate=rental_rate;
-        this.length=length;
-        this.replacement_cost=replacement_cost;
-        this.rating=rating;
-        this.special_features=special_features;
 
-    } */
-
-    public Film(){
-    }
+    public Film(){}
 
     public int getFilm_id() {
         return film_id;
