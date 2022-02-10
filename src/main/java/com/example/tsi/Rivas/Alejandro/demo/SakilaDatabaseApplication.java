@@ -33,7 +33,7 @@ public class SakilaDatabaseApplication {
 		return save;
 	}
 
-	@PostMapping("/Add_Film")
+	@PostMapping("/Add_Films")
 	public @ResponseBody String addFilm(@RequestParam int film_id, @RequestParam String title, @RequestParam String description, @RequestParam int release_year) {
 		Film addFilm = new Film(film_id, title, description, release_year);
  		filmRepository.save(addFilm);
