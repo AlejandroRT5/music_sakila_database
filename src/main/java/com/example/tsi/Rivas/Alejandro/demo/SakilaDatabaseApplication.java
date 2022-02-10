@@ -1,6 +1,5 @@
 package com.example.tsi.Rivas.Alejandro.demo;
 
-import org.jacoco.report.ILanguageNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,8 +16,11 @@ public class SakilaDatabaseApplication {
 	private FilmRepository filmRepository;
 	private String save = "save";
 
-	public SakilaDatabaseApplication(LanguageRepository languageRepository) {
+	public SakilaDatabaseApplication(LanguageRepository languageRepository,
+									 FilmRepository filmRepository
+									 ) {
 		this.languageRepository = languageRepository;
+		this.filmRepository = filmRepository;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaDatabaseApplication.class, args);
@@ -31,11 +33,19 @@ public class SakilaDatabaseApplication {
 		return save;
 	}
 
+	@PostMapping("/Add_Film")
+	public @ResponseBody String addFilm(@RequestParam int film_id, @RequestParam String title, @RequestParam String description, @RequestParam int release_year) {
+		Film addFilm = new Film(film_id, title, description, release_year);
+ 		filmRepository.save(addFilm);
+		 return save;
 
-
+	}
 	@GetMapping("/All_Languages")
 	public @ResponseBody
 	Iterable<Language> getAllLanguages() {
 		return languageRepository.findAll();
 	}
+
+
 }
+

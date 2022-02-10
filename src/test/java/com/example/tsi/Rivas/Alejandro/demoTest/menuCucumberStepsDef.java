@@ -19,7 +19,7 @@ public class menuCucumberStepsDef {
 
     @Given("The film is available")
     public void the_film_is_available() {
-        Film film = new Film();
+        Film film = new Film(1,"Title", "Description", 1990);
         throw new io.cucumber.java.PendingException();
     }
     @When("Film is in {string}")

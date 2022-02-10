@@ -12,15 +12,15 @@ public class Film {
     private String title;
     private String description;
     private int release_year;
-    private int rental_duration;
+    /*private int rental_duration;
     private double rental_rate;
     private int length;
     private double replacement_cost;
     private String rating;
-    private String special_features;
+    private String special_features; */
 
 
-    public Film(){}
+    public Film(int film_id, String title, String description, int release_year){}
 
     public int getFilm_id() {
         return film_id;
@@ -49,7 +49,7 @@ public class Film {
         this.release_year = release_year;
     }
 
-    public int getRental_duration() {
+    /*public int getRental_duration() {
         return rental_duration;
     }
 
@@ -96,5 +96,5 @@ public class Film {
     public void setSpecial_features(String special_features) {
         this.special_features = special_features;
     }
-
+*/
 }
