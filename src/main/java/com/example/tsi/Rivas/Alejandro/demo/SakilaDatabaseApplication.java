@@ -46,6 +46,11 @@ public class SakilaDatabaseApplication {
 		return languageRepository.findAll();
 	}
 
+	@GetMapping("/All_Films")
+	public @ResponseBody
+	Iterable<Film> getAllFilms() {
+		return filmRepository.findAll();
+	}
 
 }
 
