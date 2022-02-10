@@ -37,7 +37,7 @@ public class Film implements Serializable {
         this.title = title;
         this.description = description;
         this.language_id = language_id;
-        this.original_language_id = original_language_id;
+        //this.original_language_id = original_language_id;
     }
 
     public int getFilm_id() {

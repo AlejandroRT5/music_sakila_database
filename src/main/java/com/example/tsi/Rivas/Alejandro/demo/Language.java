@@ -1,11 +1,11 @@
 package com.example.tsi.Rivas.Alejandro.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Set;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "language")
 public class Language {
 
 @Id
@@ -15,7 +15,10 @@ private int language_id;
 private String name;
 
 /// Empty Constructor ///
-
+@OneToMany
+@JoinColumn(name = "language_id", insertable = false, updatable = false)
+@JsonIgnore
+private Set<Film> film;
 
     public Language(String name) {
 this.name = name;
