@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             assertEquals(name.getName(),"Spanish","Set language name not working properly");
 
         }
-        
+
 
     }
 

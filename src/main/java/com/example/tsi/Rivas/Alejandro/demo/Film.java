@@ -1,9 +1,6 @@
 package com.example.tsi.Rivas.Alejandro.demo;
 import javax.persistence.*;
 import java.io.Serializable;
-//import java.util.HashSet;
-//import java.util.Set;
-//import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="film")
