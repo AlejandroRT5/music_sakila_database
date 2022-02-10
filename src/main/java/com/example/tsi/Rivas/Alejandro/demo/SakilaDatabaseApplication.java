@@ -48,7 +48,7 @@ public class SakilaDatabaseApplication {
 
 	@GetMapping("/All_Films")
 	public @ResponseBody
-	Iterable<Film> getAllFilms() {
+	Iterable<Film> getAllFilms(int film_id, String title, String description, int release_year) {
 		return filmRepository.findAll();
 	}
 
