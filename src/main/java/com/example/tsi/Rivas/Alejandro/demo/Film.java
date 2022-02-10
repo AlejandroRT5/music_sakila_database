@@ -1,26 +1,44 @@
 package com.example.tsi.Rivas.Alejandro.demo;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
+//import java.util.HashSet;
+//import java.util.Set;
+//import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name="film")
+public class Film implements Serializable {
 
-public class Film {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int film_id;
+
     private String title;
     private String description;
     private int release_year;
-    /*private int rental_duration;
-    private double rental_rate;
-    private int length;
-    private double replacement_cost;
-    private String rating;
-    private String special_features; */
+    private int language_id;
+    @ManyToOne
+    @JoinColumn(name = "language_id", insertable = false, updatable = false)
+    private Language language;
+
+    private Integer original_language_id;
+    @ManyToOne
+    @JoinColumn(name = "original_language_id", insertable = false, updatable = false)
+    private Language original_language;
 
 
-    public Film(int film_id, String title, String description, int release_year){}
+
+
+
+    public Film() {}
+
+    public Film(String title, String description, int release_year, int language_id) {
+
+        this.title = title;
+        this.description = description;
+        this.language_id = language_id;
+        this.original_language_id = original_language_id;
+    }
 
     public int getFilm_id() {
         return film_id;
@@ -49,6 +67,13 @@ public class Film {
         this.release_year = release_year;
     }
 
+    public int getLanguage_id() {
+        return language_id;
+    }
+
+    public void setLanguage_id(int language_id) {
+        this.language_id = language_id;
+    }
     /*public int getRental_duration() {
         return rental_duration;
     }

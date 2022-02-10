@@ -43,9 +43,9 @@ public class MockitoTests {
     }
     @Test
     public void testAddFilm(){
-        Film saveFilm = new Film(1,"test title", "test description", 1997);
+        Film saveFilm = new Film("test title", "test description", 1997, 1);
         String expected = "save";
-        String actual = sakilaDatabaseApplication.addFilm(saveFilm.getFilm_id(), saveFilm.getTitle(), saveFilm.getDescription(), saveFilm.getRelease_year());
+        String actual = sakilaDatabaseApplication.addFilm(saveFilm.getTitle(), saveFilm.getDescription(), saveFilm.getRelease_year(), saveFilm.getLanguage_id());
         // comma after getName() to add more methods if data requires it
         // also add after "Test Language" if constructor has more than 1 parameter, like actor database
 

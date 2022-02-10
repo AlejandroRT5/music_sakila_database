@@ -34,8 +34,8 @@ public class SakilaDatabaseApplication {
 	}
 
 	@PostMapping("/Add_Films")
-	public @ResponseBody String addFilm(@RequestParam int film_id, @RequestParam String title, @RequestParam String description, @RequestParam int release_year) {
-		Film addFilm = new Film(film_id, title, description, release_year);
+	public @ResponseBody String addFilm(@RequestParam String title, String description, int release_year, int language_id) {
+		Film addFilm = new Film(title, description, release_year, language_id);
  		filmRepository.save(addFilm);
 		 return save;
 
@@ -48,7 +48,7 @@ public class SakilaDatabaseApplication {
 
 	@GetMapping("/All_Films")
 	public @ResponseBody
-	Iterable<Film> getAllFilms(int film_id, String title, String description, int release_year) {
+	Iterable<Film> getAllFilms() {
 		return filmRepository.findAll();
 	}
 
